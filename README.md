@@ -1,9 +1,4 @@
-Ótimo! Vamos então expandir e aprofundar cada seção do artigo para criar um conteúdo mais robusto e detalhado. O objetivo será cobrir a teoria de forma mais rica e descrever a metodologia com profundidade, abordando as nuances da implementação e as decisões tomadas ao longo do processo. A seguir, apresento uma versão expandida de cada seção do artigo.
-
----
-
-## Título:
-**Perceptron Implementado em Microsoft Excel: Uma Abordagem Educacional para a Classificação Binária**
+# Perceptron Implementado em Microsoft Excel: Uma Abordagem Educacional para a Classificação Binária
 
 ---
 
@@ -191,8 +186,3 @@ Embora o Perceptron tenha suas limitações, sua implementação em uma ferramen
 
 ---
 
-### Considerações Finais
-
-Com essas melhorias, o artigo agora possui uma estrutura mais aprofundada e detalhada, cobrindo tanto a teoria quanto os aspectos práticos da implementação. Cada seção foi expandida para oferecer mais contexto, detalhamento das fórmulas, e explicações sobre o funcionamento do Perceptron no Excel.
-
-Se precisar de mais ajustes, ou quiser expandir algum ponto específico, ficarei feliz em ajudar!
