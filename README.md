@@ -1,170 +1,271 @@
-# Perceptron Implementado em Microsoft Excel: Uma Abordagem Educacional para a Classificação Binária
+# Perceptron: Uma Abordagem Educacional para a Classificação Binária
+
+### Como reproduzir a Técnica de Perceptron no MS Excel, Python, R, Julia e Scala
+---
+
+### **Resumo:**
+
+Este artigo apresenta uma implementação do algoritmo de Perceptron de um único neurônio utilizando diferentes ferramentas: Microsoft Excel, Python, R, Julia e Scala. O Perceptron é um dos algoritmos mais fundamentais no aprendizado de máquina, amplamente utilizado para tarefas de classificação binária. Discutimos brevemente a teoria por trás do Perceptron e fornecemos uma visão prática de como reproduzi-lo em cada uma dessas plataformas, detalhando os prós e contras de cada abordagem.
+
+No Microsoft Excel, a implementação do Perceptron é usada principalmente como uma ferramenta didática, permitindo uma visualização clara e acessível dos processos de ajuste de pesos e bias. No entanto, suas limitações em termos de escalabilidade e performance o tornam inadequado para projetos complexos e de grande escala.
+
+Por outro lado, linguagens como Python, R, Julia e Scala oferecem uma ampla gama de bibliotecas especializadas em aprendizado de máquina que facilitam a implementação e otimização de modelos como o Perceptron. Estas linguagens são amplamente usadas em ambientes de produção devido à sua robustez, eficiência computacional e capacidade de lidar com grandes volumes de dados.
+
+Ao longo deste artigo, exploramos como essas diferentes plataformas podem ser utilizadas para implementar e treinar um Perceptron, destacando suas vantagens, limitações e quando cada uma delas é mais adequada para diferentes cenários.
 
 ---
 
-### **Resumo**
+## 1. **Introdução**
 
-Este artigo apresenta uma implementação de um Perceptron de um único neurônio utilizando Microsoft Excel como ferramenta principal. O Perceptron é um dos algoritmos mais fundamentais no aprendizado de máquina, utilizado para tarefas de classificação binária. Aqui, discutimos a teoria por trás do Perceptron, detalhamos a construção de uma planilha de Excel que simula o processo de treinamento do modelo e analisamos os resultados obtidos. A proposta tem como objetivo oferecer uma abordagem acessível para o aprendizado de redes neurais simples, permitindo uma visualização clara do processo de ajuste de pesos e bias. O estudo evidencia como o Excel, embora não sendo uma ferramenta tradicional para aprendizado de máquina, pode ser utilizado de maneira didática e eficaz em cenários educacionais.
+O campo do aprendizado de máquina tem se expandido rapidamente, e o Perceptron é uma das unidades fundamentais das redes neurais, utilizado para resolver problemas de classificação binária linearmente separáveis. Introduzido por **Frank Rosenblatt** em 1958, o Perceptron simula o comportamento de um neurônio biológico, servindo como base para arquiteturas mais complexas no aprendizado de máquina, como as redes neurais profundas.
+
+Apesar da disponibilidade de linguagens de programação avançadas como **Python, R, Julia e Scala**, que oferecem bibliotecas otimizadas e recursos poderosos para machine learning, o Microsoft Excel ainda pode ser útil como uma ferramenta educacional. Ele permite a visualização dos cálculos envolvidos no funcionamento de um Perceptron de forma clara e acessível, sendo uma plataforma adequada para desmistificar o conceito de redes neurais para iniciantes.
+
+No entanto, é importante destacar que o Excel, devido às suas limitações de performance e escalabilidade, não é adequado para a implementação de tarefas avançadas de aprendizado de máquina ou para o processamento de grandes volumes de dados. Ferramentas como Python e R, com bibliotecas como scikit-learn e caret, são amplamente reconhecidas como as plataformas apropriadas para tais tarefas, oferecendo robustez e eficiência para modelos mais complexos e grandes volumes de dados.
+
+O objetivo deste artigo é usar o Excel para fornecer uma compreensão clara e prática de como um Perceptron funciona, demonstrando passo a passo seu processo de ajuste de pesos e bias. Através desta abordagem simplificada, esperamos desmistificar o uso das redes neurais e deixar claro que, embora o Excel possa ser uma ferramenta útil para o aprendizado didático, ele não é capaz de realizar tarefas de machine learning em escala sem o uso de ferramentas especializadas e apropriadas.
+
+---
+Aqui está a reformulação e expansão da seção de **Revisão Teórica** para o seu artigo, mantendo o foco na clareza, precisão teórica e no contexto educacional. A formatação das equações também foi ajustada para facilitar a leitura e compreensão.
 
 ---
 
-### 1. **Introdução**
+## 2. **Revisão Teórica**
 
-Nos últimos anos, o campo do **aprendizado de máquina** tem ganhado ampla popularidade devido aos avanços em algoritmos de redes neurais e ao crescimento exponencial dos dados disponíveis para treinamento de modelos. Um dos algoritmos clássicos nesse domínio é o **Perceptron**, introduzido por **Frank Rosenblatt** em 1958. O Perceptron é um algoritmo supervisionado de classificação binária e é considerado a base para redes neurais mais complexas, como as redes multicamadas.
+### **Teoria do Perceptron**
 
-Tradicionalmente, o Perceptron é implementado em linguagens de programação como Python ou R, utilizando bibliotecas de aprendizado de máquina. No entanto, este artigo explora uma abordagem diferente: a implementação de um Perceptron utilizando o Microsoft Excel. A escolha do Excel, ferramenta amplamente acessível e familiar, visa democratizar o acesso ao aprendizado de conceitos fundamentais em aprendizado de máquina, possibilitando que estudantes e profissionais sem formação em programação visualizem e compreendam o funcionamento de um modelo de classificação simples.
+#### **O Perceptron: Um Modelo Linear**
 
-Neste artigo, descrevemos em detalhes a construção de uma planilha que simula o treinamento de um Perceptron, abordamos as questões teóricas envolvidas e discutimos os resultados obtidos. Esta abordagem é particularmente útil para ambientes educacionais, onde a interação com o modelo é essencial para o aprendizado.
+O **Perceptron** é um algoritmo de **classificação binária** baseado em um **somatório ponderado** das entradas, que gera uma saída binária (previsão). Cada entrada tem um **peso** associado, que reflete sua importância no processo de previsão, e o Perceptron aprende ajustando esses pesos durante o **treinamento**. Esse ajuste é feito a partir dos erros cometidos pelo modelo em cada iteração.
 
----
+O Perceptron é utilizado para distinguir duas classes, como "positivo" e "negativo", ou, como no caso deste estudo, "Risco" e "Imune". Seu funcionamento é o de um **classificador linear**, o que significa que ele pode separar as duas classes utilizando uma **linha reta** ou um **hiperplano**, caso os dados estejam em dimensões superiores. A linearidade do modelo implica que ele pode resolver apenas problemas onde as classes são **linearmente separáveis**.
 
-### 2. **Teoria do Perceptron**
+#### **Estrutura do Perceptron**
 
-#### 2.1. **O Perceptron: Um Modelo Linear**
+O Perceptron é composto pelos seguintes elementos básicos:
 
-O **Perceptron** é um modelo de classificação binária, utilizado para distinguir duas classes distintas, por exemplo, "positivo" e "negativo" ou, como no caso deste estudo, "Risco" e "Imune". O Perceptron opera como um **classificador linear**, o que significa que ele é capaz de separar as duas classes se houver uma linha reta (ou hiperplano, em dimensões maiores) que as separa no espaço dos dados.
+```Perceptron
+     x_1 ---- w_1 \
+     x_2 ---- w_2  \               ____ Função Degrau (z > 0 ? 1 : 0)
+     x_3 ---- w_3  / --[Somatório] ---> Saída
+     ...          /
+     x_n ---- w_n/                 +--- Bias
+```
+- **Entradas**: Os atributos ou características de cada exemplo, representados como um vetor de entradas **x**.
+- **Pesos**: Cada entrada possui um peso **\(w_i\)**, que indica a relevância dessa característica para a previsão final.
+- **Bias**: Um termo adicional que ajuda a deslocar a função de ativação, tornando o modelo mais flexível na criação de uma fronteira de decisão.
+- **Função de Ativação**: A função que transforma o **somatório ponderado** das entradas em uma **saída binária** (0 ou 1).
 
-A estrutura básica de um Perceptron consiste em:
-- **Entradas**: As características ou atributos dos exemplos, representados por um vetor de entradas **x**.
-- **Pesos**: Cada entrada possui um peso associado que indica a importância relativa dessa característica na previsão final.
-- **Bias**: Um termo adicional que ajuda a deslocar a função de ativação, permitindo que o Perceptron seja mais flexível na criação de uma fronteira de decisão.
-- **Função de Ativação**: Para determinar a classe final, o Perceptron utiliza uma função de ativação que transforma o somatório ponderado das entradas em uma saída binária.
+#### **Funcionamento Matemático do Perceptron**
 
-Matematicamente, o Perceptron é descrito pela seguinte equação:
+O Perceptron calcula o somatório ponderado das entradas da seguinte forma:
 
-\[
-z = \sum_{i=1}^{n} w_i \cdot x_i + \text{bias}
-\]
+```
+z = (w_1 * x_1) + (w_2 * x_2) + ... + (w_n * x_n) + bias
+```
 
 Onde:
-- **\(x_i\)** representa os valores das entradas (genes no exemplo),
-- **\(w_i\)** são os pesos ajustáveis associados a cada entrada,
-- **bias** é o termo de viés,
-- **z** é o somatório ponderado.
+- **\(x_i\)** são os valores das entradas,
+- **\(w_i\)** são os pesos associados a cada entrada,
+- **bias** é o termo adicional que ajusta o ponto de decisão,
+- **z** é o somatório ponderado que será usado para calcular a saída do Perceptron.
 
-#### 2.2. **Função de Ativação**
+A função de ativação é então aplicada ao valor de **z** para determinar a **classe prevista** pelo modelo.
 
-A função de ativação usada no Perceptron é a **função degrau**. Ela produz uma saída binária (0 ou 1) com base no valor do somatório ponderado. Se o valor de \( z \) for maior que zero, a saída é 1, e se for menor ou igual a zero, a saída é 0.
+---
 
-\[
-\text{saída} = 
-\begin{cases}
-1 & \text{se } z > 0 \\
-0 & \text{se } z \leq 0
-\end{cases}
-\]
+#### **Função de Ativação**
 
-Essa saída corresponde à previsão da classe feita pelo modelo.
+O Perceptron utiliza a **função degrau** como função de ativação. Essa função converte o valor do somatório ponderado **z** em uma saída binária, indicando se o exemplo pertence à **classe positiva** (1) ou à **classe negativa** (0).
 
-#### 2.3. **Treinamento do Perceptron**
+A função degrau é definida como:
 
-O treinamento do Perceptron é um processo iterativo em que os pesos e o bias são ajustados para minimizar o erro de previsão. O algoritmo ajusta os pesos e o bias sempre que a previsão feita pelo Perceptron é diferente da classe real do exemplo. A regra de atualização é baseada no erro entre a saída prevista e o valor real da classe, com o objetivo de reduzir o erro em iterações subsequentes.
+```
+saída = 
+  1, se z > 0
+  0, se z ≤ 0
+```
 
-A regra de ajuste dos pesos é descrita pela equação:
+Em outras palavras, se o valor ponderado **z** for maior que zero, o Perceptron prevê a **classe positiva** (por exemplo, "Risco"). Caso contrário, ele prevê a **classe negativa** (por exemplo, "Imune").
 
-\[
-w_{\text{novo}} = w_{\text{atual}} + \alpha \times \text{erro} \times x_i
-\]
+A simplicidade dessa função a torna ideal para tarefas de **classificação binária**, embora ela seja limitada em problemas mais complexos.
 
-E a regra de ajuste do bias:
+---
 
-\[
-\text{bias}_{\text{novo}} = \text{bias}_{\text{atual}} + \alpha \times \text{erro}
-\]
+#### **Treinamento do Perceptron**
+
+O treinamento do Perceptron ocorre de maneira **iterativa**, e o modelo ajusta seus pesos e bias sempre que a previsão feita está incorreta, ou seja, quando a saída prevista é diferente da **classe real** do exemplo. O objetivo do treinamento é minimizar o erro de previsão, ajustando os pesos para que, em iterações subsequentes, o modelo aprenda a classificar os exemplos corretamente.
+
+A **regra de atualização dos pesos** é expressa matematicamente da seguinte forma:
+
+```
+w_novo = w_atual + (α * erro * x_i)
+```
+
+E a **regra de ajuste do bias** é:
+
+```
+bias_novo = bias_atual + (α * erro)
+```
 
 Onde:
-- **\(\alpha\)** é a **taxa de aprendizado**, um valor fixo que controla o tamanho do passo na atualização dos pesos,
-- **erro** é a diferença entre o valor real e a previsão.
+- **α (alfa)** é a **taxa de aprendizado**, que controla o tamanho do passo no ajuste dos pesos.
+- **erro** é a diferença entre o valor real da classe e a previsão feita pelo Perceptron.
+- **\(x_i\)** são os valores das entradas.
 
-O processo de treinamento continua até que o Perceptron atinja um número predeterminado de épocas ou até que o erro se torne suficientemente pequeno.
+Durante o treinamento, o Perceptron faz ajustes nos pesos com base nos erros de previsão, até que o modelo alcance um número pré-determinado de épocas (iterações) ou até que o erro seja suficientemente pequeno.
 
-#### 2.4. **Limitações do Perceptron**
+---
 
-Embora o Perceptron seja eficaz para problemas **linearmente separáveis**, ele falha em lidar com problemas mais complexos, onde as classes não podem ser separadas por uma linha reta (como o problema do XOR). Para esses casos, são necessários modelos mais avançados, como o **Perceptron Multicamadas** (MLP), que podem aprender fronteiras de decisão não lineares.
+#### **Limitações do Perceptron**
+
+Embora o Perceptron seja eficaz para **problemas linearmente separáveis**, ele **falha** em resolver problemas onde as classes não podem ser separadas por uma linha reta. Um exemplo clássico desse tipo de problema é o **XOR**, onde as classes não podem ser divididas de forma linear. 
+
+Para lidar com esses problemas mais complexos, é necessário o uso de modelos mais avançados, como o **Perceptron Multicamadas (MLP)**. O MLP é capaz de aprender **fronteiras de decisão não lineares** e é amplamente utilizado em redes neurais profundas, que são aplicáveis em problemas que envolvem dados mais complexos e não linearmente separáveis.
 
 ---
 
 ### 3. **Metodologia**
 
-A implementação do Perceptron foi realizada em uma planilha Microsoft Excel, permitindo a visualização de cada etapa do processo de aprendizado. O Excel foi escolhido por sua acessibilidade e pela possibilidade de criar um ambiente interativo e visual para estudantes que estão aprendendo sobre aprendizado de máquina.
+A implementação do Perceptron foi realizada em uma planilha do Microsoft Excel com o objetivo de criar uma ferramenta visual e interativa para o aprendizado dos conceitos básicos de redes neurais. O Excel foi escolhido por sua acessibilidade e familiaridade para a maioria dos usuários, sendo uma ótima ferramenta didática para visualizar e manipular cada etapa do processo de treinamento de um Perceptron.
 
-#### 3.1. **Configuração dos Dados**
+#### 3.1 Configuração dos Dados
 
-Os dados consistem em uma matriz de valores binários representando **genes** de pacientes. Cada linha da matriz representa um paciente e cada coluna representa um gene. A última coluna contém a **classe real** do paciente ("Risco" ou "Imune"), que foi convertida para valores binários (1 para "Risco" e 0 para "Imune").
+Para simular o funcionamento do Perceptron, uma tabela de dados foi construída representando as entradas (atributos) e as saídas (classes) de diferentes exemplos. No contexto deste estudo, cada exemplo é representado por um conjunto de n atributos (genes, por exemplo), e cada exemplo pertence a uma das duas classes: "Risco" (classe positiva) ou "Imune" (classe negativa).
 
+```
 | Registro   | Gene1 | Gene2 | Gene3 | ... | Gene9 | Classe  |
 |------------|-------|-------|-------|-----|-------|---------|
 | Paciente1  | 0     | 1     | 0     | ... | 1     | Risco   |
 | Paciente2  | 1     | 0     | 1     | ... | 0     | Imune   |
+...
+| Paciente12 | 1     | 0     | 1     | ... | 0     | Imune   |
+```
 
-#### 3.2. **Passo a Passo na Planilha Excel**
+Colunas de entrada (Gene1, Gene2, ... GeneN): Representam as características dos exemplos (genes).
+Coluna de saída (Classe): Indica se o exemplo pertence à classe "Risco" (1) ou "Imune" (0).
 
-##### 3.2.1. **Somatório Ponderado (Coluna L)**
+**Gerando o CSV com os valores da matriz de referência*
+O seguinte código Python foi utilizado para gerar um arquivo CSV contendo a matriz de dados para a implementação do Perceptron, que inclui as características (genes) e suas respectivas classes:
+```Python
+import pandas as pd
 
-O somatório ponderado para cada paciente foi calculado com base nos valores dos genes e nos pesos iniciais. A fórmula no Excel para a célula **L2** foi:
+# Criando a matriz de dados com os genes e classes conforme a tabela fornecida
+data = {
+    "Registro": [f"Paciente{i}" for i in range(1, 13)],
+    "Gene1": [0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1],
+    "Gene2": [0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1],
+    "Gene3": [0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1],
+    "Gene4": [0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1],
+    "Gene5": [0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1],
+    "Gene6": [1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1],
+    "Gene7": [0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1],
+    "Gene8": [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1],
+    "Gene9": [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+    "Classe": ["Risco", "Risco", "Risco", "Imune", "Risco", "Risco", "Imune", "Imune", "Risco", "Imune", "Imune", "Risco"]
+}
 
+# Criando o DataFrame
+df = pd.DataFrame(data)
+
+# Salvando o DataFrame em um arquivo CSV
+file_path = "/mnt/data/matriz_genes_perceptron.csv"
+df.to_csv(file_path, index=False)
+
+```
+
+#### 3.2. **Passo a Passo para a Construção da Planilha Excel com o Perceptron**:
+
+#### 3.2.1. **Estrutura da Tabela de Dados**
+A primeira parte da planilha consiste em uma tabela com os registros de dados (pacientes) e seus respectivos genes, além da classe atribuída a cada exemplo (Risco ou Imune). Para criar essa estrutura, siga os seguintes passos:
+
+##### 3.2.1.1. **Colunas de Dados:**
+- **Coluna A:** "Registro" — Lista de pacientes ou exemplos.
+- **Colunas B a J:** "Gene1" a "Gene9" — Valores binários (0 ou 1) representando as características de cada paciente.
+- **Coluna K:** "Classe" — Valores categóricos representando a classe real de cada exemplo ("Risco" ou "Imune").
+
+##### 3.2.1.2. **Exemplo de Dados:**
+| Registro   | Gene1 | Gene2 | Gene3 | Gene4 | Gene5 | Gene6 | Gene7 | Gene8 | Gene9 | Classe  |
+|------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|---------|
+| Paciente1  | 0     | 0     | 0     | 0     | 0     | 1     | 0     | 0     | 0     | Risco   |
+| Paciente2  | 0     | 1     | 0     | 1     | 0     | 0     | 1     | 0     | 0     | Risco   |
+| ...        | ...   | ...   | ...   | ...   | ...   | ...   | ...   | ...   | ...   | ...     |
+
+#### 3.2.2. **Cálculo do Somatório Ponderado**
+O somatório ponderado é calculado a partir dos valores dos genes e dos pesos atribuídos a cada gene. A fórmula soma o produto de cada gene com seu respectivo peso, além de adicionar o **bias** ao resultado.
+
+##### 3.2.2.1. **Fórmula para o Somatório Ponderado:**
 ```excel
 =SOMA(B2*$B$16, C2*$B$17, D2*$B$18, ..., J2*$B$24) + $B$25
 ```
+- **B2 a J2:** Representam os genes do paciente.
+- **$B$16 a $B$24:** Contêm os pesos associados a cada gene.
+- **$B$25:** Representa o valor do bias.
+  
+##### 3.2.2.2. **Coluna L:** "Somatório Ponderado" — Contém o resultado desse cálculo para cada paciente.
 
-##### 3.2.2. **Função de Ativação (Coluna M)**
+#### 3.3. **Função de Ativação (Degrau)**
+Após calcular o somatório ponderado, aplica-se a função de ativação **degrau** para determinar a saída binária. Essa função verifica se o somatório ponderado é maior que zero e retorna 1 (classe positiva) ou 0 (classe negativa).
 
-A função de ativação foi implementada na coluna **M**, onde o valor do somatório ponderado foi comparado com 0 para gerar uma saída binária (0 ou 1). A fórmula utilizada foi:
-
+##### 3.3.1. **Fórmula da Função de Ativação:**
 ```excel
 =SE(L2 > 0, 1, 0)
 ```
+- **L2:** É o valor do somatório ponderado.
 
-##### 3.2.3. **Conversão da Classe Real (Coluna N)**
+##### 3.3.1.2. **Coluna M:** "Função de Ativação (Degrau)" — Contém a saída binária (0 ou 1) para cada exemplo.
 
-A classe real foi convertida para um valor binário (1 para "Risco" e 0 para "Imune") na coluna **N**, utilizando a fórmula:
+#### 3.4. **Conversão da Classe para Valores Numéricos**
+A classe real ("Risco" ou "Imune") precisa ser convertida em valores binários para que possa ser comparada com a previsão feita pelo Perceptron. A classe "Risco" é representada por 1, e a classe "Imune" é representada por 0.
 
+##### 3.4.1. **Fórmula de Conversão:**
 ```excel
 =SE(K2="Risco", 1, 0)
 ```
+- **K2:** É a célula contendo a classe categórica.
 
-##### 3.2.4. **Ajuste dos Pesos e Bias (Colunas O a W, e Coluna X)**
+##### 3.4.2. **Coluna N:** "Risco Convertido" — Contém o valor binário da classe real (1 para "Risco" e 0 para "Imune").
 
-Os pesos e o bias foram ajustados com base na diferença entre a previsão (coluna M) e a classe real convertida (coluna N). As fórmulas para o ajuste dos pesos (coluna O) e do
+#### 3.5. **Ajuste de Pesos e Bias**
+O ajuste dos pesos é feito com base no erro da previsão, ou seja, a diferença entre a saída prevista e a classe real. Esse ajuste é repetido em cada iteração (época) de treinamento.
 
- bias (coluna X) foram:
-
+##### 3.5.1. **Fórmula para Atualização dos Pesos:**
 ```excel
-Peso_Gene1 (Coluna O2): =B16 + $B$26*(N2 - M2)*B2
-Bias (Coluna X2): =B25 + $B$26*(N2 - M2)
+=Peso_Atual + (Taxa_de_Aprendizado * Erro * Gene)
 ```
-
-##### 3.2.5. **Taxa de Assertividade**
-
-A taxa de acerto foi calculada com base na comparação entre as previsões e as classes reais convertidas. A fórmula utilizada foi:
-
+Por exemplo, para o peso associado ao Gene1, a fórmula seria:
 ```excel
-{=SOMA(SE(M2:M13=N2:N13,1,0))/CONT.VALORES(N2:N13)*100}
+=B16 + $B$26*(N2 - M2)*B2
 ```
+- **B16:** Peso atual do Gene1.
+- **$B$26:** Taxa de aprendizado (valor fixo).
+- **N2:** Valor real da classe (convertido).
+- **M2:** Previsão feita pelo Perceptron.
+- **B2:** Valor do Gene1.
 
-#### 3.3. **Configuração dos Pesos e Bias**
+##### 3.5.2. **Coluna O a W:** Pesos ajustados para cada gene.
 
-Os pesos foram inicializados com valores aleatórios no intervalo entre -1 e 1, utilizando a fórmula:
+#### 3.6. **Ajuste do Bias**
+O bias também é ajustado com base no erro, da mesma forma que os pesos.
 
+##### 3.6.1. **Fórmula para Atualização do Bias:**
 ```excel
-=ALEATÓRIO()*2 - 1
+=Bias_Atual + (Taxa_de_Aprendizado * Erro)
 ```
+- **Bias_Atual:** É o valor atual do bias.
+- **Erro:** Diferença entre o valor real e a previsão.
 
-O **bias** também foi inicializado com um valor aleatório dentro do mesmo intervalo. A **taxa de aprendizado** foi fixada em **0.1**.
+##### 3.6.2. **Coluna X:** Bias ajustado após cada iteração.
+
+#### 3.7. **Verificação de Erros e Critério de Parada**
+O processo de ajuste continua até que o Perceptron consiga prever corretamente todas as classes ou até que um número máximo de iterações seja atingido.
+
+#### 3.8. **Visualização dos Resultados**
+Ao final do processo, a planilha exibirá os pesos ajustados e as previsões feitas pelo Perceptron para cada paciente, comparando-as com as classes reais.
 
 ---
 
-### 4. **Resultados**
-
-#### 4.1. **Treinamento e Convergência**
-
-Após várias iterações de treinamento (épocas), o modelo Perceptron começou a ajustar seus pesos e bias de forma a minimizar o erro entre a previsão e a classe real. A taxa de acerto aumentou à medida que os pesos foram sendo atualizados, resultando em uma melhor performance do modelo.
-
-#### 4.2. **Análise da Convergência**
-
-O modelo apresentou rápida convergência para os dados utilizados, pois o problema era linearmente separável. Em experimentos com dados não linearmente separáveis, o Perceptron falhou em convergir, o que é esperado devido às suas limitações.
-
-#### 4.3. **Comparação com Outros Modelos**
+#### 4. **Comparação com Outros Modelos**
 
 Comparado a modelos mais avançados, como o Perceptron Multicamadas (MLP), o Perceptron de um único neurônio mostrou limitações em problemas mais complexos. No entanto, sua simplicidade e a facilidade de visualização em ferramentas como o Excel tornam-no uma ferramenta poderosa para aprendizado introdutório.
 
@@ -172,9 +273,15 @@ Comparado a modelos mais avançados, como o Perceptron Multicamadas (MLP), o Per
 
 ### 5. **Conclusão**
 
-O estudo demonstrou que o Microsoft Excel pode ser uma plataforma eficaz para ensinar os conceitos básicos de aprendizado de máquina, especialmente em um ambiente educacional. A implementação do Perceptron em Excel oferece uma visualização clara e detalhada do processo de treinamento e ajuste de pesos, permitindo que os estudantes interajam diretamente com os parâmetros e observem os efeitos das mudanças.
+Apesar de ser amplamente utilizado em diferentes áreas, o Microsoft Excel é uma ferramenta limitada quando se trata de aprendizado de máquina e ciência de dados. Sua popularidade nesses campos não se deve à sua capacidade técnica, mas sim à sua familiaridade e acessibilidade. Excel não é uma ferramenta ideal para tarefas complexas de machine learning, como manipulação de grandes volumes de dados, construção de modelos avançados ou otimização de hiperparâmetros.
 
-Embora o Perceptron tenha suas limitações, sua implementação em uma ferramenta como o Excel destaca seu potencial como uma primeira introdução aos conceitos de redes neurais e aprendizado de máquina. Futuras explorações podem envolver a implementação de perceptrons multicamadas ou o uso de dados mais complexos para estudar as limitações do modelo.
+O Excel pode ser útil em contextos educacionais para ajudar a visualizar conceitos básicos, como a implementação de um Perceptron simples ou a análise de dados de pequena escala. No entanto, sua aplicabilidade em projetos mais robustos é extremamente limitada.
+
+Há uma abundância de ferramentas open-source robustas desenvolvidas especificamente para aprendizado de máquina e ciência de dados, como Python (com bibliotecas como scikit-learn, TensorFlow, PyTorch), R, e até mesmo soluções no-code que oferecem maior flexibilidade e poder computacional sem os gargalos de uma planilha.
+
+O uso do Excel em tais cenários muitas vezes está relacionado à falta de disposição para aprender ferramentas mais apropriadas, e não à falta de recursos ou alternativas. O tempo investido em aprender ferramentas adequadas pode resultar em maior produtividade, precisão e capacidade de trabalhar com conjuntos de dados e problemas muito maiores e mais complexos.
+
+Assim, embora o Excel possa ser útil em situações limitadas, ele é, na realidade, superestimado para aplicações de machine learning e ciência de dados. Ele não é subestimado por suas capacidades — suas limitações são conhecidas e frequentemente compensadas pela familiaridade, mas seu uso prolongado como uma ferramenta primária muitas vezes reflete a resistência em adotar soluções mais adequadas e poderosas.
 
 ---
 
