@@ -142,6 +142,8 @@ Para simular o funcionamento do Perceptron, uma tabela de dados foi construída 
 | Paciente12 | 1     | 0     | 1     | ... | 0     | Imune   |
 ```
 
+![Texto Alternativo](perceptron.png)
+
 Colunas de entrada (Gene1, Gene2, ... GeneN): Representam as características dos exemplos (genes).
 Coluna de saída (Classe): Indica se o exemplo pertence à classe "Risco" (1) ou "Imune" (0).
 
@@ -262,6 +264,8 @@ O processo de ajuste continua até que o Perceptron consiga prever corretamente 
 
 #### 3.8. **Visualização dos Resultados**
 Ao final do processo, a planilha exibirá os pesos ajustados e as previsões feitas pelo Perceptron para cada paciente, comparando-as com as classes reais.
+
+![Texto Alternativo](Guia_Excel.png)
 
 ---
 
