@@ -175,7 +175,7 @@ df.to_csv(file_path, index=False)
 ```
 
 #### 3.2. **Passo a Passo para a Construção da Planilha Excel com o Perceptron**:
-
+- [Planilha]()
 #### 3.2.1. **Estrutura da Tabela de Dados**
 A primeira parte da planilha consiste em uma tabela com os registros de dados (pacientes) e seus respectivos genes, além da classe atribuída a cada exemplo (Risco ou Imune). Para criar essa estrutura, siga os seguintes passos:
 
