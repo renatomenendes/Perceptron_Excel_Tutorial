@@ -178,6 +178,7 @@ df.to_csv(file_path, index=False)
 
 #### 3.2. **Passo a Passo para a Construção da Planilha Excel com o Perceptron**:
 - [Planilha](https://github.com/renatomenendes/Percptron_in_XLS/blob/main/Perceptrom%201%20neuro%CC%82nio.xlsx)
+
 #### 3.2.1. **Estrutura da Tabela de Dados**
 A primeira parte da planilha consiste em uma tabela com os registros de dados (pacientes) e seus respectivos genes, além da classe atribuída a cada exemplo (Risco ou Imune). Para criar essa estrutura, siga os seguintes passos:
 
@@ -265,7 +266,7 @@ O processo de ajuste continua até que o Perceptron consiga prever corretamente 
 #### 3.8. **Visualização dos Resultados**
 Ao final do processo, a planilha exibirá os pesos ajustados e as previsões feitas pelo Perceptron para cada paciente, comparando-as com as classes reais.
 
-![Texto Alternativo](Guia_Excel.png)
+![Guia Excel](Guia_Excel.png)
 
 ---
 
@@ -308,7 +309,9 @@ print("Pesos treinados:", pesos)
 print("Bias treinado:", bias)
 
 ```
-[Executio Python](Execution_Python.png)
+
+![Execution Python](Execution_Python.png)
+
 Vantagens: Python tem uma curva de aprendizado suave e a simplicidade de código torna o desenvolvimento de modelos mais rápido. Além disso, o uso de bibliotecas como NumPy facilita a implementação de operações vetorizadas, reduzindo o número de loops e melhorando a performance.
 Limitações: Embora Python seja excelente para prototipagem, pode não ser a melhor escolha em cenários onde o desempenho em tempo real é crítico.
 
