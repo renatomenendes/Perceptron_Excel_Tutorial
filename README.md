@@ -308,6 +308,7 @@ print("Pesos treinados:", pesos)
 print("Bias treinado:", bias)
 
 ```
+[Executio Python](Execution_Python.png)
 Vantagens: Python tem uma curva de aprendizado suave e a simplicidade de código torna o desenvolvimento de modelos mais rápido. Além disso, o uso de bibliotecas como NumPy facilita a implementação de operações vetorizadas, reduzindo o número de loops e melhorando a performance.
 Limitações: Embora Python seja excelente para prototipagem, pode não ser a melhor escolha em cenários onde o desempenho em tempo real é crítico.
 
