@@ -26,9 +26,6 @@ No entanto, é importante destacar que o Excel, devido às suas limitações de 
 O objetivo deste artigo é usar o Excel para fornecer uma compreensão clara e prática de como um Perceptron funciona, demonstrando passo a passo seu processo de ajuste de pesos e bias. Através desta abordagem simplificada, esperamos desmistificar o uso das redes neurais e deixar claro que, embora o Excel possa ser uma ferramenta útil para o aprendizado didático, ele não é capaz de realizar tarefas de machine learning em escala sem o uso de ferramentas especializadas e apropriadas.
 
 ---
-Aqui está a reformulação e expansão da seção de **Revisão Teórica** para o seu artigo, mantendo o foco na clareza, precisão teórica e no contexto educacional. A formatação das equações também foi ajustada para facilitar a leitura e compreensão.
-
----
 
 ## 2. **Revisão Teórica**
 
